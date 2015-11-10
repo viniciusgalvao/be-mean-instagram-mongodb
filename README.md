@@ -10,15 +10,15 @@ https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3
 Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
 
 Algumas explicações sobre bancos NO-SQL:
-
- - Chave/Valor
- - Documentos
- - Colunas
- - Grafos
-
+```
+- Chave/Valor
+- Documentos
+- Colunas
+- Grafos
+```
 Foi falado também sobre a *__construção e estrutura__* do __mongoDB__.
 
-Finalizando a aula foram apresentados os comandos de *__"Export & Import"__* do __mongoDB__ e uma ferramenta chamada __[mongohacker](https://tylerbrock.github.io/mongo-hacker/)__ que melhora a visualização de buscas e resultados no console.
+Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB__ e uma ferramenta chamada __[mongohacker](https://tylerbrock.github.io/mongo-hacker/)__ que melhora a visualização de buscas e resultados no console.
 
 ##### Links da Aula
 - [Vídeo da Aula](https://www.youtube.com/watch?v=leYxsEAL_yY)
