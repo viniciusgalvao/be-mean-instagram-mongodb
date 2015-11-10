@@ -9,7 +9,7 @@ https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3
 #### Aula 01 (Export & Import)
 Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
 
-Algumas explicações sobre bancos NO-SQL:
+Algumas explicações sobre bancos __NO-SQL__ e seus tipos:
 ```
 - Chave/Valor
 - Documentos
