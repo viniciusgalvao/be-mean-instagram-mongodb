@@ -6,21 +6,34 @@ Guia de referência do conteúdo ministrado no módulo **mongoDB** do curso grat
 https://docs.google.com/presentation/d/1KXxmcwd47x4v2SymyiBPK7ucn80PruSvcw4mZ5S3nWc/edit?usp=sharing
 )
 
-#### Aula 01 (Export & Import)
-Nessa aula foi falado um pouco sobre o curso [*"Construa seu Instagram com MEAN"*](http://dagora.net/be-mean/) e sua **EMENTA**.
+### Sobre ( `mongodb` )
+O **MongoDB** é uma aplicação de código aberto, de alta performance, sem esquemas, orientado a **documentos**. Foi escrito na linguagem de programação **C++**. Além de orientado a documentos, é formado por um conjunto de documentos **JSON**.
 
-Algumas explicações sobre bancos __NO-SQL__ e seus tipos:
+Agora que sabemos que o **MongoDB** é orientado a documentos, precisamos saber que existem outros tipos de bancos **NO-SQL**:
 ```
 - Chave/Valor
 - Documentos
-- Colunas
 - Grafos
+- Colunas
+- Mistos
 ```
-Foi falado também sobre a *__construção e estrutura__* do __mongoDB__.
 
-Finalizando a aula foram apresentados os comandos `export & import` do __mongoDB__ e uma ferramenta chamada __[mongohacker](https://tylerbrock.github.io/mongo-hacker/)__ que melhora a visualização de buscas e resultados no console.
+### Aula 01 ( `export & import` )
+Nessa primeira aula vamos conhecer os comandos `export & import` que são bem intuítivos e de fácil utilização.
 
-##### Links da Aula
+##### Export
+```
+mongoexport --db database --collection collection --out data.json
+```
+##### Import
+
+```
+mongoimport --db database --collection collection --drop --file data.json
+```
+
+**Dica:** Instale uma ferramenta chamada **[mongohacker](https://tylerbrock.github.io/mongo-hacker/)**, ela melhora a visualização de buscas e resultados no `console`.
+
+#### Links da Aula
 - [Vídeo da Aula](https://www.youtube.com/watch?v=leYxsEAL_yY)
 - [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/mongodb/export_import.md)
 - [Exercício Resolvido](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/classes/mongodb/exercises/class-01-resolved-viniciusgalvao-vinicius-galvao.md)
