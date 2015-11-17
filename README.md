@@ -70,10 +70,10 @@ SINTAXE: `db.collection.update(query, mod, options)`
 **OPERADORES DE ARRAY**
 - `$push` *adiciona um valor ao campo do array. Ele irá atualizar ou criar o campo com o valor caso ele não exista.* `{$push: {field: value}}`
 
-- `$pushAll` *adiciona cada valor do [Array_de_valores] caso o campo seja um __Array__ existente. Caso não exista irá criar o campo novo do tipo __Array__ com o valor passado no `$pushAll`.* `{$pushAll: {campo: [Array_de_valores]}}`
+- `$pushAll` *adiciona cada valor do [Array_de_valores] caso o campo seja um __Array__ existente. Caso não exista irá criar o campo novo do tipo __Array__ com o valor passado no `$pushAll`.* `{$pushAll: {field: ['value', 'othervalue', '']}}`
 
-- `$pull` *retira valor do campo, caso o campo seja um __Array__ existente. Caso não exista ele não fará nada.* `{$pull: {campo: valor}}`
+- `$pull` *retira valor do campo, caso o campo seja um __Array__ existente. Caso não exista ele não fará nada.* `{$pull: {field: value}}`
 
-- `$pullAll` *é a função inversa do `$pushAll`. sendo assim remove cada valor do __[Array_de_valores]__ caso o campo seja um __Array__ existente.* `{$pullAll: {campo: [Array_de_valores]}}`
+- `$pullAll` *é a função inversa do `$pushAll`. sendo assim remove cada valor do __[Array_de_valores]__ caso o campo seja um __Array__ existente.* `{$pullAll: {field: ['value', 'othervalue', '']}}`
 
 **OBS**: Em todos os casos dos **operadores de array** se o campo existir e não for um array irá retornar um erro.
