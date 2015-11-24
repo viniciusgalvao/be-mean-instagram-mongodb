@@ -41,7 +41,7 @@ mongoimport --host 127.0.0.1 --db database --collection collection --drop --file
 ### Aula 02 ###
 Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções, como também iremos aprender como **inserir e buscar** informações no **MongoDB**.
 
-** COMANDOS BÁSICOS **
+**COMANDOS BÁSICOS**
 
 - `use db_name` especifica o database que será usado, quando não existe ele cria.
 
@@ -79,33 +79,28 @@ SINTAXE: `db.collection.update(query, mod, options)`
 **OPERADORES DE MODIFICAÇÃO**
 
 - `$set` *modifica o valor de um campo ou cria ele, caso não exista.*
-```
-{$set: {field: value}}
-```
+>`{$set: {field: value}}`
 
 - `$setOnInsert` *irá inserir um documento adcional a nossa modificação caso haja um __upsert__*.
-```
-{$setOnInsert: {field: value, field: value, field: value ...}}
-```
+>`{$setOnInsert: {field: value, field: value, field: value ...}}``
 
 - `$unset` *deleta campos do documento.*
-```
-{$unset: {field: true or false}}
-```
+>`{$unset: {field: true or false}}`
 
 - `$inc` *incrementa um valor no campo com a quantidade desejada, caso não exista ele irá criar e setar o valor. Para decrementar basta passar um valor negativo.*
-```
-{$inc: {field: value}}
-```
+>`{$inc: {field: value}}`
 
 **OPERADORES DE ARRAY**
 - `$push` *adiciona um valor ao campo do array. Ele irá atualizar ou criar o campo com o valor caso ele não exista.* `{$push: {field: value}}`
 
-- `$pushAll` *adiciona cada valor do [Array_de_valores] caso o campo seja um __Array__ existente. Caso não exista irá criar o campo novo do tipo __Array__ com o valor passado no `$pushAll`.* `{$pushAll: {field: ['value', 'othervalue', '']}}`
+- `$pushAll` *adiciona cada valor do [Array_de_valores] caso o campo seja um __Array__ existente. Caso não exista irá criar o campo novo do tipo __Array__ com o valor passado no `$pushAll`.*
+>`{$pushAll: {field: ['value', 'othervalue', '']}}`
 
-- `$pull` *retira valor do campo, caso o campo seja um __Array__ existente. Caso não exista ele não fará nada.* `{$pull: {field: value}}`
+- `$pull` *retira valor do campo, caso o campo seja um __Array__ existente. Caso não exista ele não fará nada.*
+>`{$pull: {field: value}}`
 
-- `$pullAll` *é a função inversa do `$pushAll`. sendo assim remove cada valor do __[Array_de_valores]__ caso o campo seja um __Array__ existente.* `{$pullAll: {field: ['value', 'othervalue', '']}}`
+- `$pullAll` *é a função inversa do `$pushAll`. sendo assim remove cada valor do __[Array_de_valores]__ caso o campo seja um __Array__ existente.*
+>`{$pullAll: {field: ['value', 'othervalue', '']}}`
 
 **OBS**: Em todos os casos dos **operadores de array** se o campo existir e não for um array irá retornar um erro.
 
