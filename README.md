@@ -44,11 +44,8 @@ Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções
 **COMANDOS BÁSICOS**
 
 - `use db_name` especifica o database que será usado, quando não existe ele cria.
-
 - `mongo database` conecta ao mongo db já especificando o banco a ser utilizado.
-
 - `show dbs` mostra todas as databases criadas.
-
 - `show collections` mostra todas as coleções referente a base de dados setada.
 
 **DICA:** Caso você queirar criar uma **coleção** vazia basta utilizar função `db.createCollection(name, json_config)`
@@ -82,7 +79,7 @@ SINTAXE: `db.collection.update(query, mod, options)`
 >`{$set: {field: value}}`
 
 - `$setOnInsert` *irá inserir um documento adcional a nossa modificação caso haja um __upsert__*.
->`{$setOnInsert: {field: value, field: value, field: value ...}}``
+>`{$setOnInsert: {field: value, field: value, field: value ...}}`
 
 - `$unset` *deleta campos do documento.*
 >`{$unset: {field: true or false}}`
@@ -117,23 +114,23 @@ Abaixo vamos ver que existem 3 parâmetros possíveis que podem ser passados den
 }
 ```
 
-** USO **
+**USO**
 
 `upsert`
 
-> Insere o **documento** que está sendo passado como modificação, caso o documento não seja encontrado pela query.
+Insere o **documento** que está sendo passado como modificação, caso o documento não seja encontrado pela query.
 
 `multi`
 
-> Permite alterar vários documentos de uma vez, já que por padrão o **mongodb** não permite esse tipo de alteração.
+Permite alterar vários documentos de uma vez, já que por padrão o **mongodb** não permite esse tipo de alteração.
 
-O valor padrão dos parâmetros mostrados acima  são **false**.
+>O valor padrão dos parâmetros `upsert` e `multi` são **false**.
 
 `writeConcern`
 
-> É um documento que descreve a garantia que o **mongodb** fornece ao relatar o sucesso de uma operação de escrita.
+É um documento que descreve a garantia que o **mongodb** fornece ao relatar o sucesso de uma operação de escrita.
 
->> Ele determina o nível de garantia. Quando inserções, atualizações e exclusões tem um **write concern** fraco, operações de escrita retornam rápidamente
+>Ele determina o nível de garantia. Quando inserções, atualizações e exclusões tem um **write concern** fraco, operações de escrita retornam rápidamente
 
 ### Aula 05 ###
 Nessa aula iremos aprender como utilizar  as seguintes funcionalidades:
@@ -216,7 +213,7 @@ db.collection.group({
 });
 ```
 
-Existem outras propriedades que podem ser utilizadas no `group()` para isso [clique aqui](https://docs.mongodb.org/manual/reference/method/db.collection.group/).
+Existem outras propriedades que podem ser utilizadas no `group()` para saber mais [clique aqui](https://docs.mongodb.org/manual/reference/method/db.collection.group/).
 
 ##### AGGREGATE() #####
 
@@ -235,7 +232,7 @@ db.collection.aggregate([
 ]);
 ```
 
-Existem outras propriedades que podem ser utilizadas no `aggregate()` para isso [clique aqui](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/).
+Existem outras propriedades que podem ser utilizadas no `aggregate()` para saber mais [clique aqui](https://docs.mongodb.org/manual/reference/method/db.collection.aggregate/).
 
 O `aggregate()` e o `group()` são muito parecidos em suas funcionalidades, fique livre para escolher qual se encaixa melhor para você.
 
@@ -250,7 +247,5 @@ O relacionamento no MongoDB é todo **MANUAL**, sabendo disso para fazermos um r
 O DBRef é um convenção para representar um documento relacionado, isso inclui:
 
 - `$ref` nome da coleção a ser referenciada.
-
 - `$id` o ObjectId do documento referenciado.
-
 - `$db` a database onde a coleção referenciada se encontra.
