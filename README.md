@@ -41,7 +41,7 @@ mongoimport --host 127.0.0.1 --db database --collection collection --drop --file
 ### Aula 02 ###
 Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções, como também iremos aprender como **inserir e buscar** informações no **MongoDB**.
 
-**COMANDOS BÁSICOS**
+**COANDOS BÁSICOS**
 
 - `use db_name` especifica o database que será usado, quando não existe ele cria.
 - `mongo database` conecta ao mongo db já especificando o banco a ser utilizado.
@@ -49,6 +49,42 @@ Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções
 - `show collections` mostra todas as coleções referente a base de dados setada.
 
 **DICA:** Caso você queirar criar uma **coleção** vazia basta utilizar função `db.createCollection(name, json_config)`
+
+**- insert()**
+
+É responsável por inserir um documento em uma respectiva coleção.
+
+SINTAXE:
+```
+db.collection.insert({field: value, field: value})
+```
+
+**- save()**
+
+É responsável por inserir e salvar um documento, para isso deve ser definido um objeto.
+
+SINTAXE:
+```
+db.collection.save(bject)
+```
+
+**- find()**
+
+É responsável por acessar os dados de uma coleção, basicamente ele vai percorrer todos os registros da coleção.
+
+SINTAXE:
+```
+db.collection.find({query}, {fields_to_show})
+```
+
+**- findOne()**
+
+É responsável por acessar os dados de um documento, ele vai retornar um objeto direto.
+
+SINTAXE:
+```
+db.collection.findOne({query})
+```
 
 ### Aula 03 ###
 
@@ -114,7 +150,6 @@ Abaixo vamos ver que existem 3 parâmetros possíveis que podem ser passados den
 }
 ```
 
-**USO**
 
 `upsert`
 
@@ -143,38 +178,37 @@ aggregate()
 
 Iniciando a aula fomos apresentado à duas funcionalidades para obtermos a quantidade de documentos que possuimos na **colecão**, sendo eles:
 
-**.length()**
+**- length()**
   ```
   db.collection.find({}).length()
   ```
-**.count()**
+**- count()**
    ```
    db.collection.count({})
    ```
 
   Porém o mais performático é o `.count()`, pois `.length()` coloca todos os documentos na memória e itera para nos retornar o total, sendo assim mais lento que o `.count()`.
 
-##### DISTINCT() #####
+**- distinct()**
 
 Retorna um **array de valores únicos** de uma **propriedade(campo)**. Seu retorno **não é uma coleção de documentos**.
 
-**USO:**
 ```
 db.collection.distinct(columname) - > "retorna um array de valores"
 db.collection.distintc(columname).length -> "para saber o total de registros no array"
 db.collection.distinct(columname).sort() -> "retorna o array em ordem alfabética"
 db.collection.distinct(columname).sort().reverse() -> "retorna o array de valores em ordem alfabética inversa"
 ```
-##### LIMIT() & SKIP() #####
 
-**.limit(n)**
+
+**- limit()**
 
 O `limit()` tem como responsabilidade limitar o número de documentos que serão retornados na query por ordem CRESCENTE.
 ```
 db.collection.find({}).limit(number_of_documents)
 ```
 
-**.skip(n)**
+**- skip()**
 
 O `skip()` é responsável por dizer a partir de qual posição os documentos devem ser retornados.
 ```
@@ -189,7 +223,7 @@ var perPage = 2;
 db.collection.find({}).limit(perPage).skip(perPage * page);
 ```
 
-##### GROUP() #####
+**- group()**
 
 Pega os valores iguais de um campo pré-definido e agrupa.
 
@@ -208,14 +242,14 @@ db.collection.group({
     });
   },
   finalize: function(result){
-    // chamada quando a iteração é finalizada e tem como resultado um objeto com o resultado de toda operação.
+    // chamada quando a iteração é finalizada e tem um objeto resultado como retorno.
   }
 });
 ```
 
 Existem outras propriedades que podem ser utilizadas no `group()` para saber mais [clique aqui](https://docs.mongodb.org/manual/reference/method/db.collection.group/).
 
-##### AGGREGATE() #####
+**- aggregate()**
 
 Todas as funções do `aggregate` começam com `$`.
 
