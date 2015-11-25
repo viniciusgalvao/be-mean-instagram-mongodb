@@ -41,7 +41,7 @@ mongoimport --host 127.0.0.1 --db database --collection collection --drop --file
 ### Aula 02 ###
 Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções, como também iremos aprender como **inserir e buscar** informações no **MongoDB**.
 
-**COANDOS BÁSICOS**
+**COMANDOS BÁSICOS**
 
 - `use db_name` especifica o database que será usado, quando não existe ele cria.
 - `mongo database` conecta ao mongo db já especificando o banco a ser utilizado.
@@ -74,7 +74,7 @@ db.collection.save(bject)
 
 SINTAXE:
 ```
-db.collection.find({query}, {fields_to_show})
+db.collection.find({query}, {fields})
 ```
 
 **- findOne()**
