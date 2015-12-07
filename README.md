@@ -33,11 +33,6 @@ mongoimport --host 127.0.0.1 --db database --collection collection --drop --file
 
 **DICA:** Instale uma ferramenta chamada **[mongohacker](https://tylerbrock.github.io/mongo-hacker/)**, ela melhora a visualização de buscas e resultados no `console`.
 
-#### Links da Aula ####
-- [Vídeo da Aula](https://www.youtube.com/watch?v=leYxsEAL_yY)
-- [Exercício Solicitado](https://github.com/Webschool-io/be-mean-instagram/blob/master/apostila/mongodb/export_import.md)
-- [Exercício Resolvido](https://github.com/Webschool-io/be-mean-instagram-mongodb-excercises/blob/master/class-01/class-01-resolved-viniciusgalvao-vinicius-galvao.md)
-
 ### Aula 02 ###
 Nessa aula iremos conhecer alguns comandos para **manusear** bancos e coleções, como também iremos aprender como **inserir e buscar** informações no **MongoDB**.
 
