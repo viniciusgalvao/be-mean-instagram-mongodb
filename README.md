@@ -83,7 +83,49 @@ db.collection.findOne({query})
 
 ### Aula 03 ###
 
->Conteúdo na aula 03
+- Falando um pouco sobre o id “uuid” => identificador universal único | O mongoDB não tem campo auto-increment
+
+- Sintaxe
+	* db.collection.find({query}, {fields})
+		- query = WHERE dos bancos de dados relacionais porem no formato json.
+		- fields = são os campos que você deseja retornar ou não na sua consulta usando “true or false”.
+			Exemplo: db.collection.find({name: “Testing”}, {name: true, description: true})
+
+- Operadores Aritiméticos
+	* “<“ 	    : $lt (less than | menor que)
+	* “<=“   : $lte (less than or equal | menor ou igual)
+	* “>”     : $gt (greater than | maior que)
+	* “>=”   : $gte (greater than or equal | maior ou igual)
+
+- Operadores Lógicos
+	* $or   : (OU) => recebe um array de cláusulas com no mínimo duas condições | {$or: [{clausula1}, {clausula2}]}
+	* $nor : (Not OU) uma negativa, retornar todos menos os que estão nas condições do $nor. {$nor: [{clausula1}, {clausula2}]}
+	* $and: (e) tem funcionamento parecido com o $or porém o resultado das clausula tem que retornar verdadeiro. {$and: [{clausula1}, {clausula2}]}
+
+- Operadores Existênciais
+	* $exists : Objetos que possuam aquele campo. Ex: {fieldname: {$exists: true}}
+
+ — Operadores de Busca em Array
+
+	`$in` : Retorna o(s) documento(s)  que possui (em) algum dos valores passados no [Array_de_Valores]. { campo : {$in : [Array_de_valores]}}. Pode ser utilizado REGEX no [Array_de_valores].
+
+	`$nin` : tem o funcionamento inverso do `$in`.  { campo : {$nin : [Array_de_valores]}}. Pode ser utilizado REGEX no [Array_de_valores]
+
+	`$all` : funciona como uma condicional **AND** na busca em arrays, só irá retornar documento(s) se todos os valores passados no array forem encontrados. { campo : {$all : [Array_de_valores]}}. Pode ser utilizado REGEX no [Array_de_valores]
+
+— Operadores de Negação
+
+	`$ne`  : not equal. {  campo: { $ne:  valor} } “Não aceita REGEX”
+	`$not` : qualquer valor que não seja igual ao valor do campo. { campo: {$not : /pikachu/i}}
+
+##### REMOVE()
+Para apagar dados da coleção utilizamos o método `remove()`. O remove apenas apaga os dados, porém  a coleção continua existindo, para apagar a coleção você deve utilizar a função `drop()`.
+
+**ATENÇÃO:** O `remove()` é `multi: true` e se você não passar uma query ele irá remover todos os dados da sua coleção. Então muito cuidado ao usar esse método.
+
+Dicas
+	* O campo id sempre é retornado em qualquer consulta, caso não queira que ele seja retornado, adicionar no parâmetro FIELDS {_id: false} do db.collection.find()
+
 
 ### Aula 04 ###
 No MongoDB temos duas formas para alterar um documento, Utilizando o comando `save()` ou `update()`.
